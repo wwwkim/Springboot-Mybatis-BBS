@@ -35,8 +35,8 @@ public class ArticleController {
 	@RequestMapping("/article/doAdd")
 	@ResponseBody
 	public String doAdd(@RequestParam Map<String,Object> param) {
-		articleService.add(param);
-		return "Your post has been added.";
+		long newID = articleService.add(param);
+		return "Your post is added as No."+newID ;
 	}
 
 

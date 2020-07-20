@@ -1,5 +1,6 @@
 package com.bbs.starter.service;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 
@@ -8,7 +9,10 @@ import org.springframework.stereotype.Service;
 
 import com.bbs.starter.dao.ArticleDao;
 import com.bbs.starter.dto.Article;
+
+import lombok.extern.slf4j.Slf4j;
 @Service
+@Slf4j
 public class ArticleServiceImpl implements ArticleService {
 
 	@Autowired
@@ -21,8 +25,12 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public void add(Map<String, Object> param) {
+	public long add(Map<String, Object> param) {
 		articleDao.add(param);
+		BigInteger bigIntId=(BigInteger)param.get("id");
+		long newId=bigIntId.longValue();
+
+		return newId;
 
 	}
 
