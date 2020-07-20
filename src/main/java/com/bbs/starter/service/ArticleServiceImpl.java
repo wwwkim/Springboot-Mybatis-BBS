@@ -1,6 +1,5 @@
 package com.bbs.starter.service;
 
-import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 
@@ -9,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.bbs.starter.dao.ArticleDao;
 import com.bbs.starter.dto.Article;
+import com.bbs.starter.util.Cutil;
 
 import lombok.extern.slf4j.Slf4j;
 @Service
@@ -27,10 +27,8 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public long add(Map<String, Object> param) {
 		articleDao.add(param);
-		BigInteger bigIntId=(BigInteger)param.get("id");
-		long newId=bigIntId.longValue();
 
-		return newId;
+		return Cutil.getAsLong(param.get("id"));
 
 	}
 
