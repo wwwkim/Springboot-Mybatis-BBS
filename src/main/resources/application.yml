@@ -1,4 +1,4 @@
-Dmybatis:
+mybatis:
   type-aliases-package: com.bbs.starter.dto
 server:
   port: 8083
