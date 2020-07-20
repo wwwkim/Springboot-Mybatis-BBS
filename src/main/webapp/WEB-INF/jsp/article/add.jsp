@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -63,7 +63,7 @@ width: 200px;}
 		<div>
 			<span>Content</span>
 			<div>
-				<textarea name="bady" placeholder="Content"></textarea>
+				<textarea name="body" placeholder="Content"></textarea>
 			</div>
 		</div>
 		<div>
