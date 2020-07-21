@@ -21,5 +21,6 @@ Title:${article.title}
 <hr>
 </c:forEach>
 
+<a href ="./add">add posting</a>
 </body>
 </html>

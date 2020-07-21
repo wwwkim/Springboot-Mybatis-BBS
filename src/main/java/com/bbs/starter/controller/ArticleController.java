@@ -37,8 +37,18 @@ public class ArticleController {
 	@RequestMapping("/article/doAdd")
 	@ResponseBody
 	public String doAdd(@RequestParam Map<String,Object> param) {
-		long newID = articleService.add(param);
-		return "Your post is added as No."+newID ;
+		long newId = articleService.add(param);
+		String msg="Your post is added as No."+newId ;
+
+		StringBuilder sb=new StringBuilder();
+
+		sb.append("alert('"+msg+"');");
+		sb.append("location.replace('./detail?id="+newId+"');");
+
+		sb.insert(0, "<script>");
+		sb.append("</script>");
+
+		return sb.toString() ;
 	}
 
 
