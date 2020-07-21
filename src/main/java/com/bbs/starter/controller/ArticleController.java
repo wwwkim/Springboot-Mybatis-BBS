@@ -24,7 +24,9 @@ public class ArticleController {
 	@RequestMapping("/article/list")
 	public String showList(Model aModel) {
 		List<Article> list = articleService.getList();
+		int totalCount=articleService.getTotalCount();
 		aModel.addAttribute("list", list);
+		aModel.addAttribute("totalCount", totalCount);
 		log.info("list:" + list);
 		return "article/list";
 	}

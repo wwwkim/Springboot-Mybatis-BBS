@@ -7,10 +7,18 @@
 		SELECT *
 		FROM starter_bbs1 ORDER BY id DESC
 	</select>
-	<insert id="add" parameterType="map" useGeneratedKeys="true" keyProperty="id">
+
+	<select id="getTotalCount" parameterType="map" resultType="int">
+		SELECT count(*)
+		FROM starter_bbs1
+	</select>
+
+	<insert id="add" parameterType="map" useGeneratedKeys="true"
+		keyProperty="id">
 		INSERT INTO STARTER_bbs1
 		SET regDate = NOW(),
-		title= #{title},
+		title=
+		#{title},
 		body=#{body}
 	</insert>
 

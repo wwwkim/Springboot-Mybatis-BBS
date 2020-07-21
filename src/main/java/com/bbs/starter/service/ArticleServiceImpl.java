@@ -32,5 +32,11 @@ public class ArticleServiceImpl implements ArticleService {
 
 	}
 
+	@Override
+	public int getTotalCount() {
+
+		return articleDao.getTotalCount();
+	}
+
 
 }

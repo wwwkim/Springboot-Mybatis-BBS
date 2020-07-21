@@ -11,9 +11,8 @@
 <body>
 	<h1>Board List</h1>
 
+<h2>The total number of posts : ${totalCount}</h2>
 
-
-<h2>Version 2</h2>
 <c:forEach items="${list}" var="article">
 <section>
 ID:${article.id },
