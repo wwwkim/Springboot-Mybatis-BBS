@@ -16,40 +16,51 @@ import com.bbs.starter.service.ArticleService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@Slf4j // log.info(...)
+@Slf4j // 이걸 해야 log.info(..) 가 가능, 디버깅 용도
 public class ArticleController {
 	@Autowired
 	ArticleService articleService;
 
+	@RequestMapping("/article/detail")
+	public String showDetail(Model model, long id) {
+		Article article = articleService.getOne(id);
+
+		model.addAttribute("article", article);
+
+		return "article/detail";
+	}
+
 	@RequestMapping("/article/list")
-	public String showList(Model aModel) {
+	public String showList(Model model) {
 		List<Article> list = articleService.getList();
-		int totalCount=articleService.getTotalCount();
-		aModel.addAttribute("list", list);
-		aModel.addAttribute("totalCount", totalCount);
-		log.info("list:" + list);
+		int totalCount = articleService.getTotalCount();
+
+		model.addAttribute("list", list);
+		model.addAttribute("totalCount", totalCount);
+
 		return "article/list";
 	}
+
 	@RequestMapping("/article/add")
 	public String showAdd() {
 		return "article/add";
 	}
+
 	@RequestMapping("/article/doAdd")
 	@ResponseBody
-	public String doAdd(@RequestParam Map<String,Object> param) {
+	public String doAdd(@RequestParam Map<String, Object> param) {
 		long newId = articleService.add(param);
-		String msg="Your post is added as No."+newId ;
 
-		StringBuilder sb=new StringBuilder();
+		String msg = newId + "has benn added.";
 
-		sb.append("alert('"+msg+"');");
-		sb.append("location.replace('./detail?id="+newId+"');");
+		StringBuilder sb = new StringBuilder();
+
+		sb.append("alert('" + msg + "');");
+		sb.append("location.replace('./detail?id=" + newId + "');");
 
 		sb.insert(0, "<script>");
 		sb.append("</script>");
 
-		return sb.toString() ;
+		return sb.toString();
 	}
-
-
 }

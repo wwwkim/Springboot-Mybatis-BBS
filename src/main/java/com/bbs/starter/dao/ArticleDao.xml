@@ -22,4 +22,10 @@
 		body=#{body}
 	</insert>
 
+	<select id="getOne" parameterType="long" resultType="Article">
+		SELECT * FROM starter_bbs1 WHERE id = #{id}
+
+	</select>
+
+
 </mapper>
