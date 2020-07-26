@@ -9,6 +9,7 @@
 <title>Community site -board list</title>
 
 <link rel="stylesheet" href="/resource/common.css">
+
 </head>
 <body>
 	<h1>Post Journal</h1>
