@@ -27,7 +27,7 @@ Content:${article.body}
 <a href ="./list">move to list</a>
 <a href ="./add">add post</a>
 <a href ="./modify?id=${article.id }">edit post</a>
-<a href="./doDelete?id=${article.id}">delete post</a>
+<a onclick = "if(confirm('Are you sure you want to delete this post?')==false) return false;" href="./doDelete?id=${article.id}">delete post</a>
 
 </div>
 

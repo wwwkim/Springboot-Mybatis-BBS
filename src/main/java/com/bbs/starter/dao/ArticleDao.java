@@ -16,10 +16,7 @@ public interface ArticleDao {
 
 	public Article getOne(long id);
 
-<<<<<<< HEAD
 	public void delete(long id);
 
-=======
->>>>>>> ea6cc5bb4b9baeeaadbc22e2d9442befbd13053d
 
 }

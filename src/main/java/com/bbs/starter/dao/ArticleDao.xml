@@ -23,9 +23,14 @@
 	</insert>
 
 	<select id="getOne" parameterType="long" resultType="Article">
-		SELECT * FROM starter_bbs1 WHERE id = #{id}
+		SELECT *
+		FROM starter_bbs1 WHERE id = #{id}
 
 	</select>
+
+	<delete id="delete" parameterType="long">
+		DELETE FROM starter_bbs1 WHERE id=#{id}
+	</delete>
 
 
 </mapper>
