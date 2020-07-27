@@ -7,19 +7,20 @@
 <script>
 	function submitAddForm(form) {
 		form.title.value = form.title.value.trim();
-		if (from.title.value.lenth == 0) {
+		if (from.title.value.length == 0) {
 			alert('please enter the title');
 			form.title.focus();
 
 			return false;
 		}
 		form.body.value = form.body.value.trim();
-		alert('please enter the content');
-		form.body.focus();
+		if (form.body.value.length == 0) {
+			alert('please enter the content');
+			form.body.focus();
 
-		return false;
-	}
-	form.submit();
+			return false;
+		}
+		form.submit();
 	}
 </script>
 
