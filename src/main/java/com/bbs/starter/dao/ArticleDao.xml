@@ -29,8 +29,18 @@
 	</select>
 
 	<delete id="delete" parameterType="long">
-		DELETE FROM starter_bbs1 WHERE id=#{id}
+		DELETE FROM starter_bbs1 WHERE
+		id=#{id}
 	</delete>
+
+	<update id="modify" parameterType="map">
+		UPDATE starter_bbs1 SET title = #{title},body =#{body} WHERE id=#{id}
+
+	</update>
+
+	<update id="hitUp" parameterType="long">
+	UPDATE starter_bbs1 SET hit= hit + 1 WHERE id=#{id}
+	</update>
 
 
 </mapper>

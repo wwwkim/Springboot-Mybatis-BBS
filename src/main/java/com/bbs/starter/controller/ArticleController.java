@@ -24,6 +24,7 @@ public class ArticleController {
 	@RequestMapping("/article/detail")
 	public String showDetail(Model model, long id) {
 		Article article = articleService.getOne(id);
+		articleService.hitUp(id);
 
 		model.addAttribute("article", article);
 
@@ -79,4 +80,48 @@ public class ArticleController {
 
 
 	}
+
+	@RequestMapping("/article/modify")
+	public String showModify(Model model, long id) {
+
+		Article article=articleService.getOne(id);
+		model.addAttribute("article", article);
+
+		return "article/modify";
+	}
+
+//	@RequestMapping("/article/doModify")
+//	@ResponseBody
+//	public String doModify(@RequestParam Map<String,Object> param, long id) {
+//		articleService.modify(param);
+//		String msg=id+"has been modified.";
+//		StringBuilder sb=new StringBuilder();
+//		sb.append("<script>");
+//		sb.append("alert('"+msg+"')");
+//		sb.append("location.replace('./detail?id="+id+"');");
+//		sb.append("</script>");
+//
+//		return sb.toString();
+//
+//
+//	}
+	@RequestMapping("/article/doModify")
+	@ResponseBody
+	public String doModify(@RequestParam Map<String, Object> param, long id) {
+		articleService.modify(param);
+
+		String msg = id + "번 게시물이 수정되었습니다.";
+
+		StringBuilder sb = new StringBuilder();
+
+		sb.append("alert('" + msg + "');");
+		sb.append("location.replace('./detail?id=" + id + "');");
+
+		sb.insert(0, "<script>");
+		sb.append("</script>");
+
+		return sb.toString();
+	}
+
+
 }
