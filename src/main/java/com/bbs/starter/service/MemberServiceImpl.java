@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bbs.starter.dao.MemberDao;
+import com.bbs.starter.dto.Member;
 import com.bbs.starter.util.Cutil;
 
 @Service
@@ -60,6 +61,18 @@ public class MemberServiceImpl implements MemberService {
 		rs.put("newId", newId);
 
 		return rs;
+	}
+
+	@Override
+	public Member getOne(long loginedMemberId) {
+
+		return memberDao.getOne(loginedMemberId);
+	}
+
+	@Override
+	public Member getMatchedOne(String loginId, String loginPw) {
+
+		return memberDao.getMatchedOne(loginId,loginPw);
 	}
 
 }
