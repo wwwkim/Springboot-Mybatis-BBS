@@ -51,8 +51,5 @@
 	</div>
 
 </form>
-<div class="btns con">
-<a href ="/">main</a>
-<a href ="/member/join">join</a>
-</div>
+
 <%@ include file="../part/foot.jspf"%>

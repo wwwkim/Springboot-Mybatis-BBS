@@ -7,9 +7,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Community site -${pageName}</title>
-
 <link rel="stylesheet" href="/resource/common.css">
-
 </head>
+
 <body>
 	<h1 class="con">${pageName}</h1>
+
+	<div class="top-menu-1 con">
+		<a href="/home/main">main</a>
+
+	<c:if test="${isLogined }">
+		<a href="/member/doLogout">Logout</a>
+	</c:if>
+	<c:if test="${isLogined==false }">
+		<a href="/member/login">Logout</a>
+		<a href="/member/join">Join</a>
+	</c:if>
+
+	<a href="/article/list">Board</a>
+	<c:if test="${isLogined }">
+		<a href="/article/add">Write</a>
+	</c:if>
+	</div>
