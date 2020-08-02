@@ -16,15 +16,15 @@ public class HomeController {
 	@Autowired
 	MemberService memberService;
 
+	@RequestMapping("/")
+	public String showMain2() {
+		return "home/home";
+	}
 	@RequestMapping("/home/main")
 
 	public String showMain( Model model) {
 
 		return "home/main";
-	}
-	@RequestMapping("/")
-	public String showMain2() {
-		return "redirect:/home/main";
 	}
 
 }

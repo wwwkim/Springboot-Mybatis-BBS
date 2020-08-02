@@ -30,38 +30,63 @@
 		form.submit();
 	}
 </script>
+<section class="page-section bg-light" id="portfolio">
+	<div class="container text-center col-lg-4">
+		<div class="jumbotron " style="width: 100%;">
+			<div class="text-center">
+				<h2 class="section-heading">Sign in</h2>
 
-<form class="con common-form" action="./doJoin" method="POST"
-	onsubmit="submitJoinForm(this); return false;">
-	<div>
-		<span> ID </span>
-		<div>
-			<input name="loginId" type="text" placeholder="ID"
-				autofocus="autofocus" maxlength="30">
-		</div>
-	</div>
-	<div>
-		<span>Password</span>
-		<div>
-			<input name="loginPw" type="password" placeholder="Password"
-				autofocus="autofocus" maxlength="30">
-		</div>
-	</div>
-	<div>
-		<span>Password confirm</span>
-		<div>
-			<input name="loginPwConfirm" type="password" placeholder="Password confirm"
-				autofocus="autofocus" maxlength="30">
-		</div>
-	</div>
-	<div>
+				<form class="form-singin" action="./doJoin" method="post"
+					novalidate="novalidate"
+					onsubmit="submitJoinForm(this); return false;">
 
-		<div>
-			<input type="submit" value="Join"><input type="reset"
-				value="Cancel" onclick="history.back();">
+					<div class="text-center">
+
+						<div class="form-singin ">
+							<input class="form-control" name="loginId" type="text"
+								placeholder="Your ID *" required="required"
+								autofocus="autofocus"
+								data-validation-required-message="Please enter your ID." />
+							<p class="help-block text-danger"></p>
+						</div>
+
+					</div>
+
+
+					<div class="text-center">
+						<div class="form-singin">
+							<input class="form-control" name="loginPw" type="password"
+								placeholder="Your Password *" required="required"
+								autofocus="autofocus"
+								data-validation-required-message="Please renter your password." />
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+
+					<div class="text-center">
+						<div class="form-singin">
+							<input class="form-control" name="loginPwConfirm" type="password"
+								placeholder="Confirm Password *" required="required"
+								autofocus="autofocus"
+								data-validation-required-message="Please enter your password." />
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+
+
+					<div class="text-center">
+						<div id="success"></div>
+						<button class="btn btn-primary btn-block text-uppercase"
+							type="submit">sign in</button>
+
+					</div>
+
+				</form>
+			</div>
 		</div>
 	</div>
 
-</form>
+</section>
+
 
 <%@ include file="../part/foot.jspf"%>

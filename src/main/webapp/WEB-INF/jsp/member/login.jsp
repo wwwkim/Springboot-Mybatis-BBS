@@ -25,31 +25,57 @@
 	}
 </script>
 
-<form class="con common-form" action="./doLogin" method="POST"
-	onsubmit="submitLoginForm(this); return false;">
-	<div>
-		<span> Login ID </span>
-		<div>
-			<input name="loginId" type="text" placeholder="ID"
-				autofocus="autofocus" maxlength="30">
-		</div>
-	</div>
-	<div>
-		<span>Login Password</span>
-		<div>
-			<input name="loginPw" type="password" placeholder="Password"
-				autofocus="autofocus" maxlength="30">
-		</div>
-	</div>
 
-	<div>
+<section class="page-section bg-light" id="portfolio">
+	<div class="container text-center col-lg-4" >
+<div class="jumbotron "style="width: 100%;">
+		<div class="text-center">
+			<h2 class="section-heading">Login</h2>
 
-		<div>
-			<input type="submit" value="login"><input type="reset"
-				value="Cancel" onclick="history.back();">
-		</div>
-	</div>
+				<form class="form-singin" action="./doLogin" method="post"
+					novalidate="novalidate"
+					onsubmit="submitLoginForm(this); return false;">
 
-</form>
+					<div class="text-center">
+
+							<div class="form-singin ">
+								<input class="form-control" name="loginId" type="text"
+									placeholder="Your ID *" required="required"
+									autofocus="autofocus"
+									data-validation-required-message="Please enter your ID." />
+								<p class="help-block text-danger"></p>
+								</div>
+
+						</div>
+
+
+					<div class="text-center">
+							<div class="form-singin">
+								<input class="form-control" name="loginPw" type="password"
+									placeholder="Your Password *" required="required"
+									autofocus="autofocus"
+									data-validation-required-message="Please enter your password." />
+								<p class="help-block text-danger"></p>
+							</div>
+						</div>
+
+
+					<div class="text-center">
+						<div id="success"></div>
+						<button class="btn btn-primary btn-block text-uppercase"
+							type="submit">Login</button>
+
+					</div>
+
+				</form>
+			</div>
+
+			</div>
+			</div>
+
+
+</section>
+
+
 
 <%@ include file="../part/foot.jspf"%>

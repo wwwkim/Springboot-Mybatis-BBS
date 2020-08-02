@@ -23,29 +23,43 @@
 		form.submit();
 	}
 </script>
+<section class="page-section bg-light" id="portfolio">
+	<div class="container">
+		<div class="row mb-5 justify-content-center">
+			<div class="col-md-12">
+				<h2>Write</h2>
+			</div>
+		</div>
 
-<form class="con common-form" action="./doAdd" method="POST"
-	onsubmit="submitAddForm(this); return false;">
-	<div>
-		<span> Title </span>
-		<div>
-			<input name="title" type="text" placeholder="Title"
-				autofocus="autofocus">
-		</div>
-	</div>
-	<div>
-		<span>Content</span>
-		<div>
-			<textarea name="body" placeholder="Content"></textarea>
-		</div>
-	</div>
-	<div>
-		<span> Register</span>
-		<div>
-			<input type="submit" value="Done"><input type="reset"
-				value="Cancel" onclick="history.back();">
-		</div>
-	</div>
+		<div class="row">
+			<div class="col-md-12">
+				<form action="./doAdd" method="post"
+					onsubmit="submitAddForm(this); return false;">
 
-</form>
+					<div class="row mb-4">
+						<div class="col-md-12">
+							<input type="text" name="title" class="form-control"
+								placeholder="Title" autofocus="autofocus">
+						</div>
+					</div>
+					<div class="row mb-4">
+						<div class="col-md-12">
+							<textarea name="body" id="" class="form-control"
+								placeholder="Content" cols="30" rows="10"></textarea>
+						</div>
+					</div>
+					<div class="row " >
+						<div class="col-md-4 text-right">
+							<input type="submit" class="btn btn-primary btn-block"
+								value="save">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
 <%@ include file="../part/foot.jspf"%>

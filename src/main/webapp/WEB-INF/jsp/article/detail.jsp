@@ -4,17 +4,39 @@
 
 <c:set var="pageName" value="Detail Page" />
 <%@ include file="../part/head.jspf"%>
+<section class="page-section bg-light">
+	<div class="container">
+		<div class="row">
+			<table class="table table-striped"
+				style="text-align: center; border: 1px solid #dddddd">
+				<thead>
+					<tr>
+						<th style="background-color: #eeeeee; text-align: center;">No.${article.id }</th>
+						<th style="background-color: #eeeeee; text-align: center;">Title :${article.title}</th>
+						<th style="background-color: #eeeeee; text-align: center;">Hit.${article.hit}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="3">${article.body }</td>
+					</tr>
+				</tbody>
+			</table>
 
-<section class="con">
-	No: ${article.id }<br> Title:${article.title }<br>
-	Content:${article.body} Hit:${article.hit}
+		</div>
+	</div>
+
 </section>
-<div class="btns con">
 
-	<a href="./list">move to list</a> <a href="./add">add post</a> <a
-		href="./modify?id=${article.id }">edit post</a> <a
-		onclick="if(confirm('Are you sure you want to delete this post?')==false) return false;"
-		href="./doDelete?id=${article.id}">delete post</a>
 
-</div>
+<a href="./list" class="btn btn-primary">list</a>
+
+<a href="./add" class="btn btn-primary">write</a>
+
+<a href="./modify?id=${article.id }" class="btn btn-primary">edit</a>
+
+<a
+	onclick="if(confirm('Are you sure you want to delete this post?')==false) return false;"
+	href="./doDelete?id=${article.id}" class="btn btn-primary">delete</a>
+
 <%@ include file="../part/foot.jspf"%>
